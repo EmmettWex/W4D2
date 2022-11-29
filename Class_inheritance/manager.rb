@@ -17,7 +17,7 @@ class Manager < Employee
         while !all_emps.empty?
             emp = all_emps.shift
             if emp.is_a?(Manager)
-                all_emps.concat!(emp.employees)     # += || + || concat
+                all_emps += emp.employees
                 total += emp.salary
             else
                 total += emp.salary

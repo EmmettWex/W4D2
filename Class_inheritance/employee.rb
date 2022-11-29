@@ -1,5 +1,3 @@
-require_relative 'manager'
-
 class Employee
 
     attr_reader :name, :title, :salary, :boss
