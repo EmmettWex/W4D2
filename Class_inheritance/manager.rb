@@ -6,18 +6,13 @@ class Manager < Employee
 
     def initialize(name, title, salary, boss=nil)
         super
-        @name = name
-        @title = title
-        @salary = salary
-        @boss = boss
         @employees = []
     end
 
     def bonus(multiplier)
-        super
-        all_emps = @employees
+        all_emps = [self]
 
-        total = @salary
+        total = 0
 
         while !all_emps.empty?
             emp = all_emps.shift
@@ -30,12 +25,5 @@ class Manager < Employee
         end
         total * multiplier
     end
-
-    def fill_emps
-        
-    end
-
-
-
 
 end
