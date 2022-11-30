@@ -1,9 +1,12 @@
-class NullPiece
+require "singleton"
 
-    attr_reader :null
-    
+class NullPiece
+    include Singleton
+
+    attr_reader :symbol
+
     def initialize
-        @null = :O
+        @symbol = :O
     end
 
 end

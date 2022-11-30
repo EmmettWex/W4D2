@@ -1,9 +1,9 @@
 class Piece
 
-    attr_reader :pce 
+    attr_reader :symbol
 
     def initialize
-        @pce = :X
+        @symbol = :X
     end
 
 
