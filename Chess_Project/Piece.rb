@@ -1,10 +1,9 @@
 class Piece
 
-    attr_reader :pce, :null
+    attr_reader :pce 
 
     def initialize
         @pce = :X
-        @null = nil
     end
 
 
