@@ -1,17 +1,17 @@
 require_relative "piece"
 require_relative "Slideable"
 
-class Rook < Piece
+class Bishop < Piece
     include Slideable
     
     def symbol
-        "Rk"
+        "B"
     end
 
     private
 
     def move_dirs
-        [LINEAR]
+        [DIAGONAL]
     end
 
 end

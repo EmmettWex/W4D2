@@ -5,7 +5,6 @@ class Board
 
     def initialize
         @grid = Array.new(8) {Array.new(8)}
-        @piece = Piece.new
         @null = NullPiece.instance
         fill_board
     end
@@ -29,14 +28,14 @@ class Board
     def fill_board
         @grid.each_with_index do |row, idx|
             row.each_with_index do |ele, idx2|
-                if idx == 0 || idx == 1 ||
-                    piece = Piece.new(:white, @board, [idx,idx2])
-                    @grid[idx][idx2] = piece.symbol #remove .symbol later
+                if idx == 0 || idx == 1
+                    piece = Piece.new(:white, @grid, [idx,idx2])
+                    @grid[idx][idx2] = piece #remove .symbol later
                 elsif idx == 6 || idx == 7
-                    piece = Piece.new(:black, @board, [idx,idx2])
-                    @grid[idx][idx2] = piece.symbol #remove .symbol later
+                    piece = Piece.new(:black, @grid, [idx,idx2])
+                    @grid[idx][idx2] = piece #remove .symbol later
                 else
-                    @grid[idx][idx2] = @null.symbol #remove .symbol later
+                    @grid[idx][idx2] = @null #remove .symbol later
                 end
             end
         end
