@@ -47,11 +47,14 @@ module Slideable
                 break
             end
 
-            #go untii enemy piece
-            if @board[pot_pos].color != @color
+            #go until enemy piece
+            if @board[pot_pos].color != @color && @board[pot_pos] != @null
                 pot_pos << new_pos
                 break
-            else #must be ally
+            end
+
+            #go up until ally piece
+            if @board[pot_pos].color == @color
                 break
             end
 
