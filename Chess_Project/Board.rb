@@ -29,10 +29,14 @@ class Board
     def fill_board
         @grid.each_with_index do |row, idx|
             row.each_with_index do |ele, idx2|
-                if idx == 0 || idx == 1 || idx == 6 || idx == 7
-                    @grid[idx][idx2] = @piece.symbol
+                if idx == 0 || idx == 1 ||
+                    piece = Piece.new(:white, @board, [idx,idx2])
+                    @grid[idx][idx2] = piece.symbol #remove .symbol later
+                elsif idx == 6 || idx == 7
+                    piece = Piece.new(:black, @board, [idx,idx2])
+                    @grid[idx][idx2] = piece.symbol #remove .symbol later
                 else
-                    @grid[idx][idx2] = @null.symbol
+                    @grid[idx][idx2] = @null.symbol #remove .symbol later
                 end
             end
         end
